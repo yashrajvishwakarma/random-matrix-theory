@@ -162,17 +162,30 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named RMT
+# Target rules for targets named main
 
 # Build rule for target.
-RMT: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 RMT
-.PHONY : RMT
+main: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 main
+.PHONY : main
 
 # fast build rule for target.
-RMT/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/RMT.dir/build.make CMakeFiles/RMT.dir/build
-.PHONY : RMT/fast
+main/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
+.PHONY : main/fast
+
+#=============================================================================
+# Target rules for targets named eigendist
+
+# Build rule for target.
+eigendist: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 eigendist
+.PHONY : eigendist
+
+# fast build rule for target.
+eigendist/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/eigendist.dir/build.make CMakeFiles/eigendist.dir/build
+.PHONY : eigendist/fast
 
 #=============================================================================
 # Target rules for targets named nodesoup
@@ -200,12 +213,36 @@ matplot/fast:
 	$(MAKE) $(MAKESILENT) -f matplotplusplus/source/matplot/CMakeFiles/matplot.dir/build.make matplotplusplus/source/matplot/CMakeFiles/matplot.dir/build
 .PHONY : matplot/fast
 
+eigendist.o: eigendist.cpp.o
+.PHONY : eigendist.o
+
+# target to build an object file
+eigendist.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/eigendist.dir/build.make CMakeFiles/eigendist.dir/eigendist.cpp.o
+.PHONY : eigendist.cpp.o
+
+eigendist.i: eigendist.cpp.i
+.PHONY : eigendist.i
+
+# target to preprocess a source file
+eigendist.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/eigendist.dir/build.make CMakeFiles/eigendist.dir/eigendist.cpp.i
+.PHONY : eigendist.cpp.i
+
+eigendist.s: eigendist.cpp.s
+.PHONY : eigendist.s
+
+# target to generate assembly for a file
+eigendist.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/eigendist.dir/build.make CMakeFiles/eigendist.dir/eigendist.cpp.s
+.PHONY : eigendist.cpp.s
+
 main.o: main.cpp.o
 .PHONY : main.o
 
 # target to build an object file
 main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/RMT.dir/build.make CMakeFiles/RMT.dir/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -213,7 +250,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/RMT.dir/build.make CMakeFiles/RMT.dir/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -221,7 +258,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/RMT.dir/build.make CMakeFiles/RMT.dir/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 # Help Target
@@ -236,9 +273,13 @@ help:
 	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
-	@echo "... RMT"
+	@echo "... eigendist"
+	@echo "... main"
 	@echo "... matplot"
 	@echo "... nodesoup"
+	@echo "... eigendist.o"
+	@echo "... eigendist.i"
+	@echo "... eigendist.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

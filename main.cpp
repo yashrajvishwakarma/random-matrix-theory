@@ -14,7 +14,7 @@ std::normal_distribution<double> gaussian(0.0, 1.0);
 
 int main() {
     int size = 5000;
-    MatrixXd mat = MatrixXd::Random(size, size);
+    MatrixXd mat(size, size);
     for (int i = 0; i < size; i++) {
         mat(i, i) = gaussian(rng);      
         for (int j = i + 1; j < size; j++) {
