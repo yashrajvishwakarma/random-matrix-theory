@@ -9,38 +9,40 @@
 #include <chrono>
 
 
-using Eigen::MatrixXd;
+using Eigen::MatrixXf;
 
 int main() {
     auto start = std::chrono::high_resolution_clock::now();
     int size = 5000;
-    MatrixXd mat(size, size);
+    MatrixXf mat(size, size);
+    mat.setZero();
     #pragma omp parallel 
     {
     std::mt19937 rng(101 + omp_get_thread_num());
-    std::normal_distribution<double> gaussian(0.0, 1.0);
-    #pragma omp parallel for schedule(static)
+    std::normal_distribution<float> gaussian(0.0, 1.0);
+    #pragma omp for schedule(static)
     for (int i = 0; i < size; i++) {
         mat(i, i) = gaussian(rng);      
         for (int j = i + 1; j < size; j++) {
-            double val = gaussian(rng);
-            mat(i, j) = val;       
-            mat(j, i) = val;             
+            float val = gaussian(rng);
+            mat(i, j) = val;  
+            mat(j, i) = val;     
         }
     }
 }
-    mat /= std::sqrt((double)size);
-    Eigen::SelfAdjointEigenSolver<Eigen::MatrixXd> solve(mat, Eigen::EigenvaluesOnly);
-    Eigen::VectorXd eigenvalues = solve.eigenvalues(); 
-    std::vector<double> eig(eigenvalues.data(), eigenvalues.data() + eigenvalues.size());
+    float scale = 1.0f / std::sqrt((float)size);
+    mat *= scale;
+    Eigen::SelfAdjointEigenSolver<Eigen::MatrixXf> solve(mat, Eigen::EigenvaluesOnly);
+    Eigen::VectorXf eigenvalues = solve.eigenvalues(); 
+    std::vector<float> eig(eigenvalues.data(), eigenvalues.data() + eigenvalues.size());
     auto h = matplot::hist(eig);
     h->normalization(matplot::histogram::normalization::pdf);
     matplot::hold(true);
-    auto curve = matplot::fplot([](double x) { return (2.0 / matplot::pi) * std::sqrt(4 - std::pow(x, 2)) / 4.0; }, std::array<double, 2>{-2, 2});
+    auto curve = matplot::fplot([](double x) { return (2.0 / matplot::pi) * std::sqrt(4 - x * x) / 4.0;}, std::array<double, 2>{-2, 2});
     curve->line_width(3);
     auto end = std::chrono::high_resolution_clock::now();
 
-    std::chrono::duration<double> elapsed = end - start;
+    std::chrono::duration<float> elapsed = end - start;
 
     std::cout << "Total runtime: " << elapsed.count() << " seconds\n";
     matplot::show();

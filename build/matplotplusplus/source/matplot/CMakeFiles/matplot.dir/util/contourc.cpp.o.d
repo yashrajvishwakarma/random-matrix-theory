@@ -753,6 +753,7 @@ matplotplusplus/source/matplot/CMakeFiles/matplot.dir/util/contourc.cpp.o: \
   /opt/homebrew/opt/llvm@17/bin/../include/c++/v1/__memory/uses_allocator_construction.h \
   /opt/homebrew/opt/llvm@17/bin/../include/c++/v1/cassert \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/assert.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_assert.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_static_assert.h \
   /Users/yashrajvishwakarma/Desktop/Duke/RMT/matplotplusplus/source/matplot/axes_objects/contours.h \
   /Users/yashrajvishwakarma/Desktop/Duke/RMT/matplotplusplus/source/matplot/detail/config.h \

@@ -1,28 +1,27 @@
 cmake_minimum_required(VERSION 3.15)
 project(RMT)
-set(CMAKE_CXX_STANDARD 17)
 
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_FLAGS_RELEASE "-O3 -march=native -ffast-math")
+
+find_package(Eigen3 REQUIRED)
+find_package(OpenMP REQUIRED)
 
 add_subdirectory(matplotplusplus)
-find_package(Eigen3 REQUIRED)
-find_package(BLAS REQUIRED)
-find_package(OpenMP REQUIRED)
 
 add_executable(main main.cpp)
 add_executable(eigendist eigendist.cpp)
 
-target_link_libraries(main
+target_link_libraries(main PRIVATE
     Matplot++::matplot
     Eigen3::Eigen
-    ${BLAS_LIBRARIES}
     OpenMP::OpenMP_CXX
+    "-framework Accelerate"
 )
-target_compile_options(main PRIVATE -O3 -march=native)
 
-target_link_libraries(eigendist
+target_link_libraries(eigendist PRIVATE
     Matplot++::matplot
     Eigen3::Eigen
-    ${BLAS_LIBRARIES}
     OpenMP::OpenMP_CXX
+    "-framework Accelerate"
 )
-target_compile_options(eigendist PRIVATE -O3 -march=native)

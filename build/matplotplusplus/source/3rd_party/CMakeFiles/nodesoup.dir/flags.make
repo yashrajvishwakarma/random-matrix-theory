@@ -6,7 +6,7 @@ CXX_DEFINES = -D_USE_MATH_DEFINES
 
 CXX_INCLUDES = -I/opt/homebrew/opt/libomp/include -I/Users/yashrajvishwakarma/Desktop/Duke/RMT/matplotplusplus/source/3rd_party/nodesoup/include
 
-CXX_FLAGSarm64 = -O3 -DNDEBUG -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -fvisibility=hidden
+CXX_FLAGSarm64 = -O3 -march=native -ffast-math -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -fvisibility=hidden
 
-CXX_FLAGS = -O3 -DNDEBUG -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -fvisibility=hidden
+CXX_FLAGS = -O3 -march=native -ffast-math -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -fvisibility=hidden
 

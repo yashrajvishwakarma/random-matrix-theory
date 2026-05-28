@@ -4,9 +4,9 @@
 # compile CXX with /opt/homebrew/opt/llvm@17/bin/clang++
 CXX_DEFINES = -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX
 
-CXX_INCLUDES = -I/opt/homebrew/opt/libomp/include -I/Users/yashrajvishwakarma/Desktop/Duke/RMT/matplotplusplus/source -I/Users/yashrajvishwakarma/Desktop/Duke/RMT/build/matplotplusplus/source/matplot -F/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks -isystem /opt/homebrew/include/eigen3
+CXX_INCLUDES = -I/opt/homebrew/opt/libomp/include -I/Users/yashrajvishwakarma/Desktop/Duke/RMT/matplotplusplus/source -I/Users/yashrajvishwakarma/Desktop/Duke/RMT/build/matplotplusplus/source/matplot -isystem /opt/homebrew/include/eigen3
 
-CXX_FLAGSarm64 = -O3 -DNDEBUG -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -O3 -march=native -Xpreprocessor -fopenmp
+CXX_FLAGSarm64 = -O3 -march=native -ffast-math -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -Xpreprocessor -fopenmp
 
-CXX_FLAGS = -O3 -DNDEBUG -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -O3 -march=native -Xpreprocessor -fopenmp
+CXX_FLAGS = -O3 -march=native -ffast-math -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -Xpreprocessor -fopenmp
 
