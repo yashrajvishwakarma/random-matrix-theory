@@ -76,15 +76,15 @@ CMakeFiles/eigendist.dir/eigendist.cpp.o: CMakeFiles/eigendist.dir/flags.make
 CMakeFiles/eigendist.dir/eigendist.cpp.o: /Users/yashrajvishwakarma/Desktop/Duke/RMT/eigendist.cpp
 CMakeFiles/eigendist.dir/eigendist.cpp.o: CMakeFiles/eigendist.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/yashrajvishwakarma/Desktop/Duke/RMT/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/eigendist.dir/eigendist.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/eigendist.dir/eigendist.cpp.o -MF CMakeFiles/eigendist.dir/eigendist.cpp.o.d -o CMakeFiles/eigendist.dir/eigendist.cpp.o -c /Users/yashrajvishwakarma/Desktop/Duke/RMT/eigendist.cpp
+	/opt/homebrew/opt/llvm@17/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/eigendist.dir/eigendist.cpp.o -MF CMakeFiles/eigendist.dir/eigendist.cpp.o.d -o CMakeFiles/eigendist.dir/eigendist.cpp.o -c /Users/yashrajvishwakarma/Desktop/Duke/RMT/eigendist.cpp
 
 CMakeFiles/eigendist.dir/eigendist.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/eigendist.dir/eigendist.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/yashrajvishwakarma/Desktop/Duke/RMT/eigendist.cpp > CMakeFiles/eigendist.dir/eigendist.cpp.i
+	/opt/homebrew/opt/llvm@17/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/yashrajvishwakarma/Desktop/Duke/RMT/eigendist.cpp > CMakeFiles/eigendist.dir/eigendist.cpp.i
 
 CMakeFiles/eigendist.dir/eigendist.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/eigendist.dir/eigendist.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/yashrajvishwakarma/Desktop/Duke/RMT/eigendist.cpp -o CMakeFiles/eigendist.dir/eigendist.cpp.s
+	/opt/homebrew/opt/llvm@17/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/yashrajvishwakarma/Desktop/Duke/RMT/eigendist.cpp -o CMakeFiles/eigendist.dir/eigendist.cpp.s
 
 # Object files for target eigendist
 eigendist_OBJECTS = \
@@ -103,6 +103,7 @@ eigendist: /opt/homebrew/lib/libpng.dylib
 eigendist: /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/libz.tbd
 eigendist: /opt/homebrew/lib/libpng.dylib
 eigendist: matplotplusplus/source/3rd_party/libnodesoup.a
+eigendist: /opt/homebrew/opt/libomp/lib/libomp.dylib
 eigendist: CMakeFiles/eigendist.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/yashrajvishwakarma/Desktop/Duke/RMT/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable eigendist"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/eigendist.dir/link.txt --verbose=$(VERBOSE)
