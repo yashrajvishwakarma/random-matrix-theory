@@ -15,7 +15,6 @@ int main() {
     auto start = std::chrono::high_resolution_clock::now();
     int size = 5000;
     MatrixXf mat(size, size);
-    mat.setZero();
     #pragma omp parallel 
     {
     std::mt19937 rng(101 + omp_get_thread_num());
